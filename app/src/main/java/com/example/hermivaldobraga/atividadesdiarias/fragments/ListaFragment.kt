@@ -14,9 +14,7 @@ import android.view.animation.Animation
 import com.example.hermivaldobraga.atividadesdiarias.R
 import com.example.hermivaldobraga.atividadesdiarias.adapter.LineAct
 import com.example.hermivaldobraga.atividadesdiarias.model.Nota
-import com.labo.kaji.fragmentanimations.CubeAnimation
 import com.labo.kaji.fragmentanimations.SidesAnimation
-import kotlinx.android.synthetic.main.fragment_lista.*
 
 
 /**
@@ -52,12 +50,9 @@ class ListaFragment : Fragment() {
         var nota = Nota("Primeira nota de teste","Apenas um texto qualquer")
         var notas = ArrayList<Nota>()
         notas.add(nota)
-        adapter = LineAct(notas)
+        adapter = LineAct(notas, this)
         recycle.adapter = adapter
-
         recycle.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
-
-
     }
 
 

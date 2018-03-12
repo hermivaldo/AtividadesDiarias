@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.*
 import android.view.animation.Animation
+import android.widget.TextView
 
 import com.example.hermivaldobraga.atividadesdiarias.R
 import com.labo.kaji.fragmentanimations.SidesAnimation
@@ -18,8 +19,13 @@ class CadastroFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
+        val inflate = inflater!!.inflate(R.layout.fragment_cadastro, container, false)
+        if (arguments != null){
 
-        return inflater!!.inflate(R.layout.fragment_cadastro, container, false)
+            inflate.findViewById<TextView>(R.id.tvCadTitulo).text = arguments.getString("tvNota")
+            inflate.findViewById<TextView>(R.id.tvCadDesc).text = arguments.getString("txDescription")
+        }
+        return inflate
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
