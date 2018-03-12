@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">AtividadesDiarias</string>
+    <string name="title_activity_painel">PainelAct</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Cadastrar</string>
+    <string name="title_notifications">Notificações</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">TÍTULO</string>
+</resources>
