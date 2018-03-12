@@ -11,7 +11,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.widget.Toast
-import com.example.hermivaldobraga.atividadesdiarias.PainelAct
 
 import com.example.hermivaldobraga.atividadesdiarias.R
 import com.example.hermivaldobraga.atividadesdiarias.adapter.LineAct
@@ -64,14 +63,16 @@ class ListaFragment : Fragment() {
         override fun click(position: Int) {
 
             val nota = adapter.getItem(position)
+            val transition = fragmentManager.beginTransaction()
+
             val fragment = CadastroFragment()
             val bundle = Bundle()
             bundle.putString("tvNota", nota.nota)
             bundle.putString("txDescription", nota.description)
             fragment.arguments = bundle
 
-            PainelAct().changeFragment(fragment)
-
+            transition.replace(R.id.frameLayout, fragment)
+            transition.commit()
 
         }
 

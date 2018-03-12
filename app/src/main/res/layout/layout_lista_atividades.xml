@@ -43,7 +43,7 @@
             android:textSize="14sp"
             android:typeface="normal" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/ivDelete"
             android:layout_width="42dp"
             android:layout_height="42dp"
