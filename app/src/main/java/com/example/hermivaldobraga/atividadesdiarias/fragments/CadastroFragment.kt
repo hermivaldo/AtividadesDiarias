@@ -7,7 +7,6 @@ import android.view.*
 import android.view.animation.Animation
 
 import com.example.hermivaldobraga.atividadesdiarias.R
-import com.labo.kaji.fragmentanimations.CubeAnimation
 import com.labo.kaji.fragmentanimations.SidesAnimation
 
 
@@ -15,7 +14,6 @@ import com.labo.kaji.fragmentanimations.SidesAnimation
  * A simple [Fragment] subclass.
  */
 class CadastroFragment : Fragment() {
-
 
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
