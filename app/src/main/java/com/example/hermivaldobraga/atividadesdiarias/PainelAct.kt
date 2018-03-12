@@ -28,7 +28,7 @@ class PainelAct : AppCompatActivity() {
         false
     }
 
-    fun changeFragment(fragment: Fragment){
+    public fun changeFragment(fragment: Fragment){
 
         var transition = supportFragmentManager.beginTransaction()
         transition.replace(R.id.frameLayout, fragment)

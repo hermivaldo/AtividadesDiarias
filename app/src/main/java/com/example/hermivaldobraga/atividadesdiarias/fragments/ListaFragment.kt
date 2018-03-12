@@ -10,9 +10,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
+import android.widget.Toast
+import com.example.hermivaldobraga.atividadesdiarias.PainelAct
 
 import com.example.hermivaldobraga.atividadesdiarias.R
 import com.example.hermivaldobraga.atividadesdiarias.adapter.LineAct
+import com.example.hermivaldobraga.atividadesdiarias.listener.OnClickListener
 import com.example.hermivaldobraga.atividadesdiarias.model.Nota
 import com.labo.kaji.fragmentanimations.SidesAnimation
 
@@ -50,13 +53,29 @@ class ListaFragment : Fragment() {
         var nota = Nota("Primeira nota de teste","Apenas um texto qualquer")
         var notas = ArrayList<Nota>()
         notas.add(nota)
-        adapter = LineAct(notas, this)
+        adapter = LineAct(notas, onClick)
         recycle.adapter = adapter
         recycle.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
     }
 
 
 
+    var onClick = object : OnClickListener {
+        override fun click(position: Int) {
+
+            val nota = adapter.getItem(position)
+            val fragment = CadastroFragment()
+            val bundle = Bundle()
+            bundle.putString("tvNota", nota.nota)
+            bundle.putString("txDescription", nota.description)
+            fragment.arguments = bundle
+
+            PainelAct().changeFragment(fragment)
+
+
+        }
+
+    }
 
     override fun onCreateAnimation(transit: Int, enter: Boolean, nextAnim: Int): Animation {
         return SidesAnimation.create(SidesAnimation.RIGHT, enter, 1000);
